@@ -62,12 +62,12 @@ const List = () => {
     toggleEdit();
   }
 
-  function cancleCreate(event) {
-    event.preventDefault;
+  function cancelCreate(event) {
+    event.preventDefault();
     toggleCreate();
   }
   function cancelEdit(event) {
-    event.preventDefault;
+    event.preventDefault();
     toggleEdit();
   }
 
@@ -85,8 +85,7 @@ const List = () => {
         saveTitleToState={saveTitleToState}
         saveContentToState={saveContentToState}
         savePost={savePost}
-        cancleCreate={cancleCreate}
-        cancelEdit={cancelEdit}
+        cancelCreate={cancelCreate}
       />
     );
   } else if (isEdit) {
@@ -98,6 +97,7 @@ const List = () => {
         saveTitleToState={saveTitleToState}
         saveContentToState={saveContentToState}
         updatePost={updatePost}
+        cancelEdit={cancelEdit}
       />
     );
   } else {

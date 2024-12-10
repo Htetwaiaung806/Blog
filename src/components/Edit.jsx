@@ -1,4 +1,6 @@
 import { GrUpdate } from "react-icons/gr";
+import { ImCancelCircle } from "react-icons/im";
+import { GrDocumentUpdate } from "react-icons/gr";
 
 const Edit = ({
   title,
@@ -25,10 +27,13 @@ const Edit = ({
           defaultValue={content}
           onChange={saveContentToState}
         ></textarea>
-        <button className="btn btn-primary me-2" onClick={updatePost}>
+        <button className="btn btn-success me-2" onClick={updatePost}>
+        <GrDocumentUpdate  className="me-2" />
+
           Update Post
         </button>
         <button className="btn btn-danger " onClick={cancelEdit}>
+          <ImCancelCircle className="me-2" />
           Cancel
         </button>
       </form>
