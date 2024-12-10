@@ -17,8 +17,6 @@ const List = () => {
 
   const [editId, setEditId] = useState("");
 
-  //   useEffect(() => console.log(title, content), [title, content]);
-  // useEffect(() => console.log(posts), [posts]);
   useEffect(() => console.log(posts), [posts]);
 
   const getTitel = useRef();
@@ -78,6 +76,7 @@ const List = () => {
     setEditId(id);
     toggleEdit();
   }
+
   if (isCreate) {
     return (
       <Create
@@ -104,21 +103,33 @@ const List = () => {
   } else {
     return (
       <section className="text-center">
-        <h1 className="text-primary my-3">All Post</h1>
-        {posts.map((post) => {
-          return (
-            <Post
-              key={post.id}
-              id={post.id}
-              title={post.title}
-              content={post.content}
-              editPost={editPost}
-            />
-          );
-        })}
+        <h1 className="text-primary my-3">All Posts</h1>
+        <table className="table table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Content</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {posts.map((post) => {
+              return (
+                <Post
+                  key={post.id}
+                  id={post.id}
+                  title={post.title}
+                  content={post.content}
+                  editPost={editPost}
+                />
+              );
+            })}
+          </tbody>
+        </table>
         <button className="btn btn-primary mt-3" onClick={toggleCreate}>
           <IoMdAdd className="me-2" />
-          Creat Post
+          Create Post
         </button>
       </section>
     );

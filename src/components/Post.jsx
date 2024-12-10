@@ -3,18 +3,19 @@ import { FaEdit } from "react-icons/fa";
 
 const Post = ({ id, title, content, editPost }) => {
   return (
-    <>
-      <section>
-        <h3>{title}</h3>
-        <p>{content}</p>
+    <tr>
+      <td>{id}</td>
+      <td>{title}</td>
+      <td>{content}</td>
+      <td>
         <button onClick={() => editPost(id)} className="btn btn-primary me-2 ">
           <FaEdit />
         </button>
-        <button onClick={()=>deletePost(id)}  className="btn btn-danger">
+        <button onClick={() => deletePost(id)} className="btn btn-danger">
           <RiDeleteBin6Fill />
         </button>
-      </section>
-    </>
+      </td>
+    </tr>
   );
 };
 export default Post;
