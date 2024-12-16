@@ -62,6 +62,13 @@ const List = () => {
     toggleEdit();
   }
 
+  const deletePost = (id) => {
+    const modifiedPosts = posts.filter((eachPost) => {
+      return eachPost.id !== id;
+    });
+    setPosts(modifiedPosts);
+  };
+
   function cancelCreate(event) {
     event.preventDefault();
     toggleCreate();
@@ -76,6 +83,7 @@ const List = () => {
     setEditId(id);
     toggleEdit();
   }
+  
 
   if (isCreate) {
     return (
@@ -122,6 +130,7 @@ const List = () => {
                   title={post.title}
                   content={post.content}
                   editPost={editPost}
+                  deletePost={deletePost}
                 />
               );
             })}

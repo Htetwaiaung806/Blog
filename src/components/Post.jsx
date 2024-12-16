@@ -1,7 +1,7 @@
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { FaEdit } from "react-icons/fa";
 
-const Post = ({ id, title, content, editPost }) => {
+const Post = ({ id, title, content, editPost,deletePost }) => {
   return (
     <tr>
       <td>{id}</td>
